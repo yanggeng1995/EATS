@@ -1,7 +1,7 @@
-# GAN-TTS
-A pytorch implementation of the GAN-TTS: HIGH FIDELITY SPEECH SYNTHESIS WITH ADVERSARIAL NETWORKS(https://arxiv.org/pdf/1909.11646.pdf)
+# EETS
+A pytorch implementation of the EETS: End-to-End Adversarial Text-to-Speech (https://arxiv.org/pdf/2006.03575.pdf)
 
-![](./images/gan-tts.jpg)
+![](./images/eets.png)
 
 ## Prepare dataset
 * Download dataset for training. This can be any wav files with sample rate 24000Hz.
