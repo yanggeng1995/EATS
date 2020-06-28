@@ -1,7 +1,7 @@
 # EETS
 A pytorch implementation of the EETS: End-to-End Adversarial Text-to-Speech (https://arxiv.org/pdf/2006.03575.pdf)
 
-![](./images/eets.png)
+<img src="https://github.com/yanggeng1995/EETS/images/eets.png" height="200" /><br/>
 
 ## Attention
 * I only implemented the preliminary framework.
