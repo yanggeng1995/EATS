@@ -46,7 +46,7 @@ class EETS(nn.Module):
         encoder_outputs, predict_duration = self.encoder(encoder_inputs, noise, speaker_inputs)
 
         decoder_inputs = self.expand_model(encoder_outputs, duration)
-        
+
         z_inputs = torch.cat([noise, speaker_inputs], dim=1)
         outputs = self.decoder(decoder_inputs.transpose(1, 2), z_inputs)
 
@@ -60,14 +60,14 @@ class ExpandFrame(nn.Module):
     def forward(self, encoder_outputs, duration):
         t = torch.round(torch.sum(duration, dim=-1, keepdim=True)) #[B, 1]
         e = torch.cumsum(duration, dim=-1).float() #[B, L]
-        c = e - 0.5 * t #[B, L]
+        c = e - 0.5 * torch.round(duration) #[B, L]
 
-        t = torch.range(0, torch.max(t)) 
+        t = torch.range(0, torch.max(t))
         t = t.unsqueeze(0).unsqueeze(1) #[1, 1, T]
         c = c.unsqueeze(2)
         w_1 = torch.exp(-0.1 * (t - c) ** 2)  # [B, L, T]
         w_2 = torch.sum(torch.exp(-0.1 * (t - c) ** 2), dim=1, keepdim=True)  # [B, 1, T]
-        
+
         w = w_1 / w_2
 
         out = torch.matmul(w.transpose(1, 2), encoder_outputs)
