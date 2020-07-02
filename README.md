@@ -9,4 +9,5 @@ A pytorch implementation of the EETS: End-to-End Adversarial Text-to-Speech (htt
 
 ## Author
 Geng Yang ([@yanggeng1995](https://github.com/yanggeng1995))
+
 Jian Cong ([@npujcong](https://github.com/npujcong))
