@@ -1,5 +1,5 @@
-# EETS
-A pytorch implementation of the EETS: End-to-End Adversarial Text-to-Speech (https://arxiv.org/pdf/2006.03575.pdf)
+# EATS
+A pytorch implementation of the EATS: End-to-End Adversarial Text-to-Speech (https://arxiv.org/pdf/2006.03575.pdf)
 
 ![](./images/eets.png)
 
